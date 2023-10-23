@@ -1,27 +1,29 @@
-# React + TypeScript + Vite
+# BookReview(鋭意製作中)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![デモ画像](./public/スクリーンショット2023-10-23_10.17.04.png)
 
-Currently, two official plugins are available:
+## 環境
+React 18.2.0  
+TypeScript 5.0.2  
+Vite 4.4.5  
+React Router 6.17.0  
+Tailwindcss 3.3.3
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+# 動作確認
+※ 本サービスは楽天の書籍検索APIを使用しているため、事前にアプリケーションIDを取得して下さい。(詳しくは[楽天APIの利用方法](https://qiita.com/fmyuk/items/2067bad47904fcfeeb60)をお読み下さい。)
+また、BookReview_JS_serverと合わせて使用して下さい
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Githubから本リポジトリをクローンします。
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+2. クローンしたリポジトリに移動し、以下のコマンドを入力
+```
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. コマンドの実行完了後、App.jsxのhandleSearch関数内にある${APP_ID}を取得したアプリケーションIDに書き換えて以下のコマンドを入力し、アプリを起動
+```
+npm run dev
+```
+
+4. アプリ起動後、検索欄に書籍名を入力し検索ボタンを押下すると、該当書籍が表示されます
