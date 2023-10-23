@@ -25,8 +25,8 @@ const BookResults: React.FC<{ bookresults: BookType[] }> = ({ bookresults }) => 
                                 </a>
                                 <div className="mb-8">
                                     <h1 className="text-start">{book.Item.title}</h1>
-                                    <h2 className="w-40">{book.Item.itemPrice}円</h2>
-                                    <Link to={"/comment/" + book.Item.isbn} state={{ title: book.Item.title }} >コメントを書く</Link>
+                                    <h2 className="w-40 inline">{book.Item.itemPrice}円</h2>
+                                    <h2 className="ml-5 inline"><Link to={"/comment/" + book.Item.isbn} state={{ title: book.Item.title }} >コメントを書く</Link></h2>
                                 </div>
                             </div>
                             <div>
