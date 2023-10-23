@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Comment: React.FC = () => {
-    const isbn = useLocation().pathname.substring(9, 22);
-    const [comment, setComment] = useState('');
-    const title = useLocation().state.title;
+    const isbn: string = useLocation().pathname.substring(9, 22);
+    const [comment, setComment] = useState<string>('');
+    const title: string = useLocation().state.title;
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.post(
@@ -31,6 +32,7 @@ const Comment: React.FC = () => {
             console.log('Comment insert');
         })
         setComment('');
+        navigate('/')
     }
 
     return (
