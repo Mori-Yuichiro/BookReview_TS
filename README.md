@@ -12,7 +12,7 @@ Tailwindcss 3.3.3
 
 # 動作確認
 ※ 本サービスは楽天の書籍検索APIを使用しているため、事前にアプリケーションIDを取得して下さい。(詳しくは[楽天APIの利用方法](https://qiita.com/fmyuk/items/2067bad47904fcfeeb60)をお読み下さい。)
-また、BookReview_JS_serverと合わせて使用して下さい
+また、BookReview_TS_serverと合わせて使用して下さい
 
 1. Githubから本リポジトリをクローンします。
 
