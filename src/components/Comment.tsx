@@ -36,14 +36,14 @@ const Comment: React.FC = () => {
     }
 
     return (
-        <div>
+        <div className="text-center space-y-4">
             <h1>コメント</h1>
-            <div>
+            <div className="space-y-4">
                 <div>
-                    <textarea className="outline" value={comment} placeholder="コメントを書いて下さい" onChange={handleChangeComment} />
+                    <textarea className="outline w-46 pb-10" value={comment} placeholder="コメントを書いて下さい" onChange={handleChangeComment} />
                 </div>
                 <div>
-                    <button className="outline" onClick={handlePost}>投稿</button>
+                    <button className="outline px-16" onClick={handlePost}>投稿</button>
                 </div>
             </div>
             <Link to="/">戻る</Link>
