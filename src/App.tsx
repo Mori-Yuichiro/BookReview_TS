@@ -27,7 +27,7 @@ function App() {
       .catch((error) => {
         console.error(error);
       })
-  }, [setBooks, text])
+  }, [setBooks, text]);
 
   return (
     <>
@@ -47,4 +47,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
