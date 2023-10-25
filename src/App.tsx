@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import InputText from "./components/InputText"
 import BookResults from "./components/BookResult";
 import Comment from "./components/Comment";
@@ -16,7 +16,7 @@ function App() {
     setText(newText);
   }
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     const URL = `https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&title=${text}&applicationId=${APP_ID}`;
 
     fetch(URL)
@@ -27,7 +27,7 @@ function App() {
       .catch((error) => {
         console.error(error);
       })
-  }
+  }, [setBooks, text])
 
   return (
     <>

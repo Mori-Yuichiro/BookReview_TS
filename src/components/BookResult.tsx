@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import BookType from "../types/BookType";
 import CommentType from "../types/CommentType";
 
-const BookResults: React.FC<{ bookresults: BookType[] }> = ({ bookresults }) => {
+const BookResults: React.FC<{ bookresults: BookType[] }> = memo(({ bookresults }) => {
     const [commentData, setCommentData] = useState<CommentType[]>([]);
     useEffect(() => {
         axios.get("http://127.0.0.1:3000").then((response) => {
@@ -39,6 +39,6 @@ const BookResults: React.FC<{ bookresults: BookType[] }> = ({ bookresults }) => 
             }
         </div >
     )
-}
+})
 
 export default BookResults;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 type Props = {
     text: string;
@@ -6,7 +6,7 @@ type Props = {
     handleSearch: () => void;
 }
 
-const InputText: React.FC<Props> = ({ text, handleChangeText, handleSearch }) => {
+const InputText: React.FC<Props> = memo(({ text, handleChangeText, handleSearch }) => {
 
     const handleClickSearch = () => {
         handleSearch();
@@ -22,6 +22,6 @@ const InputText: React.FC<Props> = ({ text, handleChangeText, handleSearch }) =>
             <button className="outline px-3 bg-slate-300" type="submit" onClick={handleClickSearch}>検索</button>
         </div>
     )
-}
+})
 
 export default InputText;
