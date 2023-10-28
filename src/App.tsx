@@ -1,9 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { useState, useCallback } from "react";
-import InputText from "./components/InputText"
-import BookResults from "./components/BookResult";
-import Comment from "./components/Comment";
 import BookType from "./types/BookType";
+import Router from './router/Router';
 
 
 const APP_ID: string = import.meta.env.VITE_APP_ID;
@@ -32,15 +30,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={
-            <div className="container">
-              <InputText handleChangeText={handleChangeText} text={text} handleSearch={handleSearch} />
-              <BookResults bookresults={books} />
-            </div>
-          } />
-          <Route path="/comment/:isbn" element={<Comment />} />
-        </Routes>
+        <Router handleChangeText={handleChangeText} text={text} handleSearch={handleSearch} books={books} />
       </BrowserRouter>
 
     </>
