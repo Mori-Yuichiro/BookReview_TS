@@ -1,8 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
 import { useState, useCallback } from "react";
-// import InputText from "./components/InputText"
-// import BookResults from "./components/BookResult";
-// import Comment from "./components/Comment";
 import BookType from "./types/BookType";
 import Router from './router/Router';
 
