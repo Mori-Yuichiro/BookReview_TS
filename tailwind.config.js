@@ -5,6 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      xs: '420px',
+      // デフォルトのブレイクポイントを展開
+      ...require('tailwindcss/defaultTheme').screens,
+    },
     extend: {},
   },
   plugins: [],

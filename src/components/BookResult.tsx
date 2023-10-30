@@ -18,7 +18,7 @@ const BookResults: React.FC<{ bookresults: BookType[] }> = memo(({ bookresults }
             {
                 bookresults.map((book, index) => (
                     !book ? <h1>Loading</h1> :
-                        <div key={index} className="w-30 sm:ml-20 md:ml-28 lg:ml-40 xl:ml-60 flex">
+                        <div key={index} className="xs:ml-36 sm:ml-40 md:ml-28 lg:ml-64 xl:ml-96 flex">
                             <div className="md:mr-40">
                                 <a className="" href={book.Item.itemUrl} target="_blank" rel="noreferrer">
                                     <img src={book.Item.largeImageUrl} alt="" />
