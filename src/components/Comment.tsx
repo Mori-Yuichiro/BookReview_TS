@@ -1,39 +1,24 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import useComment from "../hooks/useComment";
 
 const Comment: React.FC = () => {
-    const isbn: string = useLocation().pathname.substring(9, 22);
     const [comment, setComment] = useState<string>('');
-    const title: string = useLocation().state.title;
-    const navigate = useNavigate();
+    const { postBook, postComment } = useComment();
 
     useEffect(() => {
-        axios.post(
-            'http://127.0.0.1:3000/book/post',
-            { title: title, isbn: isbn }
-        ).then(() => {
-            console.log('Book insert');
-        })
-
-
+        postBook();
     }, [])
 
     const handleChangeComment = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setComment(e.target.value);
-    }
+    };
 
     const handlePost = () => {
-        axios.post(
-            'http://127.0.0.1:3000/comment/post',
-            { isbn: isbn, comment: comment }
-        ).then(() => {
-            console.log('Comment insert');
-        })
+        postComment(comment);
         setComment('');
-        navigate('/')
-    }
+    };
 
     return (
         <div className="text-center space-y-4">
