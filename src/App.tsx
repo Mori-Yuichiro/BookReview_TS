@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Router from './router/Router';
 
 import useSearchBook from './hooks/useSearchBook';
+import { BookImageProvider } from "./providers/BookImageProvider";
 
 
 function App() {
@@ -16,9 +17,10 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Router handleChangeText={handleChangeText} text={text} handleSearch={searchBook} books={books} />
+        <BookImageProvider>
+          <Router handleChangeText={handleChangeText} text={text} handleSearch={searchBook} books={books} />
+        </BookImageProvider>
       </BrowserRouter>
-
     </>
   )
 }

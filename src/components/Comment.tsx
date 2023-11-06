@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import React, { memo, useContext, useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import useComment from "../hooks/useComment";
 
-const Comment: React.FC = () => {
+import useComment from "../hooks/useComment";
+import { BookImageContext } from "../providers/BookImageProvider";
+
+const Comment: React.FC = memo(() => {
     const [comment, setComment] = useState<string>('');
     const { postBook, postComment } = useComment();
+    const { imageUrl } = useContext(BookImageContext);
 
     useEffect(() => {
         postBook();
@@ -23,6 +26,7 @@ const Comment: React.FC = () => {
     return (
         <div className="text-center space-y-4">
             <h1>コメント</h1>
+            <img className="block m-auto" src={imageUrl} alt="" />
             <div className="space-y-4">
                 <div>
                     <textarea className="outline w-46 pb-10" value={comment} placeholder="コメントを書いて下さい" onChange={handleChangeComment} />
@@ -34,6 +38,6 @@ const Comment: React.FC = () => {
             <Link to="/">戻る</Link>
         </div>
     )
-}
+})
 
 export default Comment;

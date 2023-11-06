@@ -1,17 +1,24 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
 import BookType from "../types/BookType";
 import CommentType from "../types/CommentType";
+import { BookImageContext } from "../providers/BookImageProvider";
 
 const BookResults: React.FC<{ bookresults: BookType[] }> = memo(({ bookresults }) => {
     const [commentData, setCommentData] = useState<CommentType[]>([]);
+    const { setImageUrl } = useContext(BookImageContext);
+
     useEffect(() => {
         axios.get("http://127.0.0.1:3000").then((response) => {
             setCommentData(response.data);
         });
     }, [bookresults]);
 
+    const onClickImageSet = (imageUrl: string) => {
+        setImageUrl(imageUrl);
+    }
 
     return (
         <div className="my-6 mr-8">
@@ -26,7 +33,7 @@ const BookResults: React.FC<{ bookresults: BookType[] }> = memo(({ bookresults }
                                 <div className="mb-8">
                                     <h1 className="text-start">{book.Item.title}</h1>
                                     <h2 className="w-40 inline">{book.Item.itemPrice}円</h2>
-                                    <h2 className="ml-5 inline"><Link to={"/comment/" + book.Item.isbn} state={{ title: book.Item.title }} >コメントを書く</Link></h2>
+                                    <h2 className="ml-5 inline" onClick={() => onClickImageSet(book.Item.largeImageUrl)}><Link to={"/comment/" + book.Item.isbn} state={{ title: book.Item.title }} >コメントを書く</Link></h2>
                                 </div>
                             </div>
                             <div>
