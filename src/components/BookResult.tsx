@@ -38,7 +38,7 @@ const BookResults: React.FC<{ bookresults: BookType[] }> = memo(({ bookresults }
                             </div>
                             <div>
                                 {commentData.map((comment, index) => (
-                                    book.Item.isbn === comment.isbn && <div key={index}>{comment.comments}</div>
+                                    book.Item.isbn === comment.isbn && <div key={index}>{comment.Comment}</div>
                                 ))}
                             </div>
                         </div>
