@@ -29,10 +29,10 @@ const Comment: React.FC = memo(() => {
             <img className="block m-auto" src={imageUrl} alt="" />
             <div className="space-y-4">
                 <div>
-                    <textarea className="outline w-46 pb-10" value={comment} placeholder="コメントを書いて下さい" onChange={handleChangeComment} />
+                    <textarea className="outline w-1/3 pb-10" value={comment} placeholder="コメントを書いて下さい" onChange={handleChangeComment} />
                 </div>
                 <div>
-                    <button className="outline px-16" onClick={handlePost}>投稿</button>
+                    <button className="outline w-1/3" onClick={handlePost}>投稿</button>
                 </div>
             </div>
             <Link to="/">戻る</Link>
