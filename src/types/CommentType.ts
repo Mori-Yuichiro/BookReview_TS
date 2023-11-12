@@ -1,7 +1,7 @@
 type CommentType = {
     title: string;
     isbn: string;
-    Comment: string;
+    comment: string;
 }
 
 export default CommentType;
