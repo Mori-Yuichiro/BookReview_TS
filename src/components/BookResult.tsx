@@ -36,7 +36,7 @@ const BookResults: React.FC<{ bookresults: BookType[] }> = memo(({ bookresults }
                                         : <h1 className="text-start">{book.Item.title}</h1>
                                     }
                                     <h2 className="w-40 inline">{book.Item.itemPrice}円</h2>
-                                    <h2 className="ml-5 inline" onClick={() => onClickImageSet(book.Item.largeImageUrl)}><Link to={"/comment/" + book.Item.isbn} state={{ title: book.Item.title }} >コメントを書く</Link></h2>
+                                    <h2 className="ml-5 inline hover:text-white" onClick={() => onClickImageSet(book.Item.largeImageUrl)}><Link to={"/comment/" + book.Item.isbn} state={{ title: book.Item.title }} >コメントを書く</Link></h2>
                                 </div>
                             </div>
                             <div className=" w-1/2 rounded bg-white md:ml-0 xs:ml-3 text-center pt-3 h-auto">
