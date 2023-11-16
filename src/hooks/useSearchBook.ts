@@ -2,7 +2,8 @@ import { useCallback, useState } from "react";
 
 import BookType from "../types/BookType";
 
-const APP_ID: string = import.meta.env.VITE_APP_ID;
+// const APP_ID: string = import.meta.env.VITE_APP_ID;
+const APP_ID: string | undefined = process.env.VITE_APP_ID;
 
 const useSearchBook = (text: string) => {
     const [books, setBooks] = useState<BookType[]>([]);
