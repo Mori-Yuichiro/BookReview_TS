@@ -8,4 +8,6 @@ export default {
     moduleNameMapper: {
         '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__ mocks __/fileMock.js',
     },
+    testMatch: ['<rootDir>/src/__tests__/*.test.tsx'],
+
 }

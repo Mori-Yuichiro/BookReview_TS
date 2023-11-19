@@ -3,6 +3,8 @@ import { useCallback, useState } from "react";
 import BookType from "../types/BookType";
 
 // const APP_ID: string = import.meta.env.VITE_APP_ID;
+
+//npm run test実行時にこちらに切り替え
 const APP_ID: string | undefined = process.env.VITE_APP_ID;
 
 const useSearchBook = (text: string) => {
